@@ -19,7 +19,12 @@ export const Card = () => {
     };
   }, []);
   
-
+  const handleDismiss = () => {
+    setSuccess(false);
+    if(emailField && emailField.current){
+        emailField.current.value = '';
+    }
+  }
   const handleSubmit = (e:any) => {
     e.preventDefault();
     const emailAddress:string = e.target.email.value;
@@ -33,7 +38,7 @@ export const Card = () => {
     }else{
         setEmailAddress(emailAddress);
         setSuccess(true);
-        setError('')
+        setError('');
     }
         
   };
@@ -122,10 +127,7 @@ export const Card = () => {
           </div>
         </div>
         <button
-          onClick={() => {
-            setSuccess(false);
-            emailField.current.value = "";
-          }}
+          onClick={handleDismiss}
           className=" transition-colors ease-in-out w-full bg-dark-slate-grey text-white py-4 px-10 rounded-lg hover:bg-gradient-to-b from-[#FF6A3A] to-[#FF527B]"
         >
           Dismiss message
