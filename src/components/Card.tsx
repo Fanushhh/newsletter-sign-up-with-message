@@ -6,7 +6,7 @@ export const Card = () => {
   const [emailAddress, setEmailAddress] = useState("");
   const [error, setError] = useState("");
   const [currentWidth, setCurrentWidth] = useState(0)
-  const emailField = useRef(null);
+  const emailField = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const updateWindowWidth = () => {
@@ -21,7 +21,7 @@ export const Card = () => {
   
   const handleDismiss = () => {
     setSuccess(false);
-    if(emailField && emailField.current){
+    if(emailField.current){
         emailField.current.value = '';
     }
   }
@@ -42,7 +42,6 @@ export const Card = () => {
     }
         
   };
-  console.log(currentWidth);
   
   return (
     <>
