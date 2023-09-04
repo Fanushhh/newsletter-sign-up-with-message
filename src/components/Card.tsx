@@ -5,7 +5,7 @@ export const Card = () => {
   const [success, setSuccess] = useState(false);
   const [emailAddress, setEmailAddress] = useState("");
   const [error, setError] = useState("");
-  const [currentWidth, setCurrentWidth] = useState(0)
+  const [currentWidth, setCurrentWidth] = useState(window.innerWidth)
   const emailField = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -57,7 +57,8 @@ export const Card = () => {
             alt="newsletter ilustration"
           />
         </div>
-        <div className="text px-6 py-10 sm:max-w-[376px] sm:w-full sm:pr-4">
+        
+        <div className="text px-6 py-10 sm:max-w-[376px] sm:w-full sm:pr-0">
           <div>
             <h1 className=" text-[40px] font-bold pb-6 sm:text-[56px] sm:leading-[110%]">Stay updated!</h1>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
@@ -112,8 +113,10 @@ export const Card = () => {
       >
         <div className="flex-1 mt-[91px] sm:flex-auto sm:mt-0">
           <div className="mb-10">
+            
             <img src="/images/icon-success.svg" alt="success icon" />
           </div>
+          
           <div className="sm:mb-10">
             <h1 className="text-[40px] font-bold leading-[110%] pb-6">
               Thanks for subscribing!
